@@ -1,0 +1,34 @@
+header{
+    text-align: center;
+    color: white;
+    background-color: black;
+    opacity: .7;
+    margin-top: 20;
+}
+header:hover{/*hover is used to change the color or style when the mouse is moved on that particular tag*/
+    opacity: 5;
+}
+a:active{
+    color: orange;
+}
+a:hover{
+    color: red;
+}
+button{
+    color: red;
+}
+
+img:hover{
+    flex-grow: 3;
+    transition: 1s;
+    /*transform: rotateX(360deg);/*on full 360 deg rotation*/
+    /*transform: skewX(45deg);/*only on 180 deg axis*/
+    /*transform: translate(100px);/*move the position image on x axis*/
+    /*-ms-transform-origin: ;/*it is used for safari browser*/
+    /*-moz-transform-origin:;/*it is used for mozilla firefox browser */
+}
+
+.root{
+    --bg-primary:red;/*declaring the background color as default and can be called anywhere*/
+    color:var(--bg-primary)
+}

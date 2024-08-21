@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(63, 39, 53);
+        }
+    </style>
+    
+    <!--FORM-->
+    <div style="background-color: rgb(163, 117, 142);" class="col-8 offset-2 text-light rounded py-4 mt-3 px-3" >
+    <h1>Registration form</h1>
+    <span>Enter all details below</span>
+     <form action="details.php" method="post" enctype="multipart/form-data" id="form">  <!--get method is not secure.post is secure-->
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);" class="input-group-text text-light" >Name:</span>
+            <input type="text"name="fname" id="fname" class="form-control form-control-lg " placeholder="Enter your first name">
+            <input type="text"name="lname" id="lname" class="form-control form-control-lg " placeholder="Enter your last name">
+        </div>
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);"class="input-group-text  text-light" >dob:</span>
+            <input type="date"name="dob" id="dob" class="form-control form-control-lg "required> <!--"required" is used to make the field to be starred important and it should be filled mandatorily-->
+        </div>
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);"class="input-group-text  text-light" >qualification:</span>
+            <select name="qualification" id="qualification" class="form-control form-control-lg ">
+                <option value="B.E">B.E</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="B.Tech">B.Tech</option>
+            </select>
+        </div>
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);"class="input-group-text  text-light">Upload your resume:</span>
+            <input type="file"name="file" id="file" class="form-control form-control-lg ">
+        </div>
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);"class="input-group-text  text-light">Email:</span>
+            <input type="email"name="email" id="email" class="form-control form-control-lg "placeholder="Enter your email">
+        </div>
+        <div class="input-group mt-3">
+            <span style="background-color: rgb(48, 22, 36);"class="input-group-text  text-light" >Password:</span>
+            <input type="password"name="pwd" id="pwd" class="form-control form-control-lg " placeholder="Enter your password">
+            <input type="password"name="cpwd" id="cpwd" class="form-control form-control-lg " placeholder="Enter again to confirm your password">
+        </div>
+        <div class="mt-3 d-flex">
+            <button type="submit" class="btn btn-success btn-lg d-block mx-3">Register</button>
+            <button type="submit" class="btn btn-danger btn-lg d-block">Reset</button>   
+        </div>
+     </form>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const pwd = document.getElementById('pwd').value;
+            const cpwd = document.getElementById('cpwd').value;
+            //pwd != cpwd ? alert('Passwords do not match'): form.submit()
+            if (pwd != cpwd){
+                alert('Passwords do not match');
+            } 
+            else{
+                form.submit();
+            }
+
+        });
+    });
+    
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>        
+</body>
+</html>
+
+
+<!--"==" it is an equivalence operator to check the equality of datas and "===" it is uesd to chack the equality of datas and also data types-->
